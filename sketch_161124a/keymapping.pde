@@ -51,13 +51,16 @@ void getkeys(){
          effectsMode.none = true;  
     } else if (key == 's' || key == 'S'){
          effectsMode.setAll(false);  
-         effectsMode.pixelate = true; 
+         effectsMode.crawlCircle = true; 
     } else if (key == 'd' || key == 'D'){
          effectsMode.setAll(false);  
-         effectsMode.glitchPixelate = true; 
+         effectsMode.crawlBlock = true; 
     } else if (key == 'f' || key == 'F'){
          effectsMode.setAll(false);  
          effectsMode.ghost = true; 
+    } else if (key == 'g' || key == 'G'){
+          effectsMode.setAll(false); 
+          effectsMode.pixelate = true; 
     }
      
    //set target movie
@@ -78,7 +81,7 @@ void getkeys(){
     //color reset  
    if(key == 'q' || key == 'Q'){
       resetColors();
-    } else if (key == 'g' || key == 'G'){
+    } else if (key == 'w' || key == 'W'){
      newTintColor = colors[int(random(0, colors.length))];
    }
     
@@ -89,7 +92,7 @@ void getkeys(){
     }
     
     //clear animations
-    if(key == 'w' || key == 'W'){
+    if(key == 'e' || key == 'E'){
       animation.setAll(false);
       frameRate(20); 
       aniFrame = null; 

@@ -15,21 +15,24 @@ class Transition {
 //effects modes
 class Modes {
   boolean none; 
+  boolean crawlCircle; 
+  boolean crawlBlock; 
   boolean pixelate; 
-  boolean glitchPixelate; 
   boolean ghost; 
   
-  Modes(boolean tNone, boolean tPixelate, boolean tGPixel, boolean tGhost){
-    ghost = tGhost; 
-    pixelate = tPixelate; 
-    glitchPixelate = tGPixel; 
+  Modes(boolean tNone, boolean tCCircle, boolean tCBlock, boolean tGhost, boolean tPixelate){
     none = tNone;
+    ghost = tGhost; 
+    crawlCircle = tCCircle; 
+    crawlBlock = tCBlock; 
+    pixelate = tPixelate; 
   }
 
   void setAll(boolean value){
     none = value; 
     ghost = value; 
-    glitchPixelate = value; 
+    crawlCircle = value; 
+    crawlBlock = value; 
     pixelate = value; 
   }
 } 
