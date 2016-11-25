@@ -6,11 +6,11 @@ void getkeys(){
    }
    if (key == 'l' || key == 'L'){
      blockSize+=2;
-     if(blockSize >= 50) blockSize = 10; 
+     if(blockSize > 50) blockSize = 2; 
    } 
    if (key == 'k' || key == 'K'){
      blockSize-=2;
-     if(blockSize<=2) blockSize = 10; 
+     if(blockSize<2) blockSize = 50; 
    } 
    
    //toggle live
@@ -61,18 +61,22 @@ void getkeys(){
          effectsMode.setAll(false); 
          effectsMode.none = true;  
     } else if (key == 's' || key == 'S'){
+         blockSize = 10; 
          effectsMode.setAll(false);  
          effectsMode.crawlCircle = true; 
     } else if (key == 'd' || key == 'D'){
+         blockSize = 10;
          effectsMode.setAll(false);  
          effectsMode.crawlBlock = true; 
     } else if (key == 'f' || key == 'F'){
          effectsMode.setAll(false);  
          effectsMode.ghost = true; 
     } else if (key == 'g' || key == 'G'){
+          blockSize = 5; 
           effectsMode.setAll(false); 
           effectsMode.pixelate = true; 
     } else if (key == 'h' || key == 'H'){
+          blockSize = 2; 
           effectsMode.setAll(false); 
           effectsMode.lines = true; 
     }

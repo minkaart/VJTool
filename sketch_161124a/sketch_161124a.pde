@@ -133,9 +133,9 @@ if(bGround != true){
    } else if(effectsMode.none){
        playMov(targetMov); 
    } else if (effectsMode.crawlCircle){
-       crawlCircle(blockSize, targetMov);  
+       crawl(blockSize, targetMov, true);  
    } else if (effectsMode.crawlBlock){
-       crawlBlock(blockSize, targetMov);
+       crawl(blockSize, targetMov, false);
    } else if (effectsMode.pixelate){
        movColors = new color[width/blockSize * height/blockSize];
        glitchPixelate(blockSize, movColors, targetMov); 
