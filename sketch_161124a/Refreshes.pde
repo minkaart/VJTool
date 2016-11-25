@@ -15,4 +15,5 @@ void refreshActive(){
     println("refresh "+i);
     //text(5-i, width/2, height/2);
   }
+  background(0); 
 }

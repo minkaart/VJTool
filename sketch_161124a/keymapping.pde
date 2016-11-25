@@ -5,11 +5,11 @@ void getkeys(){
      blockSize = 30;
    }
    if (key == 'l' || key == 'L'){
-     blockSize+=2;
+     blockSize+=1;
      if(blockSize > 50) blockSize = 2; 
    } 
    if (key == 'k' || key == 'K'){
-     blockSize-=2;
+     blockSize-=1;
      if(blockSize<2) blockSize = 50; 
    } 
    
@@ -80,14 +80,14 @@ void getkeys(){
           effectsMode.setAll(false); 
           effectsMode.lines = true; 
     } else if (key == 'j' || key == 'J'){
-          blockSize = 2;
+          blockSize = 8;
           bGround = false; 
           effectsMode.setAll(false); 
           effectsMode.crawlCircle = true; 
     }
      
    //set target movie
-    if (key >= '1' && key <= '6'){
+    if (key >= '1' && key <= '8'){
       targetMov = singles[int(key)-49];  
     } else {
         if(key == 'z' || key == 'Z'){
@@ -110,8 +110,9 @@ void getkeys(){
     
    //movie reset
    if (key == 'm' || key == 'M'){ 
-          refreshActive();
-          println("m clicked");
+       background(0);
+       refreshActive();
+       println("m clicked");
     }
     
     //clear animations

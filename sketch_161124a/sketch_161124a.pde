@@ -44,6 +44,7 @@ int totalBalls = 2000;
 PVector [] b = new PVector[totalBalls];
 float moveSpeed = 5;
 
+PImage logo; 
 boolean change; 
 int j; 
 Transition transition; 
@@ -67,6 +68,8 @@ void setup() {
   background(0);
   frameRate(20);
   noStroke();
+  logo = loadImage("Clockenflap.jpg"); 
+  //image(logo, 0, 0); 
  
 //live
 thisLive = true;
@@ -119,12 +122,12 @@ targetMov.loop();
 }
 
 // Display values from movie
-void draw() {   
-
+void draw() {
+  
 if(keyPressed) getkeys(); 
 
 if(bGround != true){
-  println("clearing background");
+  //println("clearing background");
   background(0); 
 }
 //get effect  
