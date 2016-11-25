@@ -37,6 +37,7 @@ color newTintColor;
 PImage lastFrame; 
 
 int blockSize = 10;
+boolean bGround = false; 
 color movColors[];
 
 int totalBalls = 2000;
@@ -93,7 +94,7 @@ targetMov.loop();
 
 //POPULATE EFFECTS and ANIMATIONS
   animation = new Animations(false, false, false, false, false); 
-  effectsMode = new Modes(true, false, false, false, false); 
+  effectsMode = new Modes(true, false, false, false, false, false); 
 
   colors = new color[]{color(237, 17, 53), 
       color(13, 252, 145), 
@@ -110,7 +111,6 @@ targetMov.loop();
   draws3 = 0;  
 
 //Stuff for Unused Transitions/effects
-  movColors = new color[width/blockSize * height/blockSize];
   transition = new Transition(0, 0, new int[width/blockSize*height/blockSize]);  
   fadeRate = 10; 
   textSize(32); 
@@ -120,9 +120,13 @@ targetMov.loop();
 
 // Display values from movie
 void draw() {   
-background(0); 
+
 if(keyPressed) getkeys(); 
 
+if(bGround != true){
+  println("clearing background");
+  background(0); 
+}
 //get effect  
    if(effectsMode.ghost){
        ghost(targetMov); 
@@ -133,7 +137,10 @@ if(keyPressed) getkeys();
    } else if (effectsMode.crawlBlock){
        crawlBlock(blockSize, targetMov);
    } else if (effectsMode.pixelate){
+       movColors = new color[width/blockSize * height/blockSize];
        glitchPixelate(blockSize, movColors, targetMov); 
+   } else if (effectsMode.lines){
+       lines(blockSize, targetMov);
    }
 
 //get play animation   

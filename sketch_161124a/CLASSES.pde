@@ -19,13 +19,15 @@ class Modes {
   boolean crawlBlock; 
   boolean pixelate; 
   boolean ghost; 
+  boolean lines;
   
-  Modes(boolean tNone, boolean tCCircle, boolean tCBlock, boolean tGhost, boolean tPixelate){
+  Modes(boolean tNone, boolean tCCircle, boolean tCBlock, boolean tGhost, boolean tPixelate, boolean tLines){
     none = tNone;
     ghost = tGhost; 
     crawlCircle = tCCircle; 
     crawlBlock = tCBlock; 
     pixelate = tPixelate; 
+    lines = tLines; 
   }
 
   void setAll(boolean value){
@@ -33,7 +35,8 @@ class Modes {
     ghost = value; 
     crawlCircle = value; 
     crawlBlock = value; 
-    pixelate = value; 
+    pixelate = value;
+    lines = value; 
   }
 } 
 

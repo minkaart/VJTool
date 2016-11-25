@@ -24,6 +24,17 @@ void getkeys(){
      }
    }
    
+   //toggle background
+   if(key == 'b' || key == 'B'){
+     if(bGround){
+       bGround = false; 
+       println("background = false");
+     } else {
+       bGround = true;
+       println("background = true");
+     }
+   }
+   
    //set animation 
     if(key == 'p' || key == 'P') {
        animation.tintGo = true; 
@@ -61,10 +72,13 @@ void getkeys(){
     } else if (key == 'g' || key == 'G'){
           effectsMode.setAll(false); 
           effectsMode.pixelate = true; 
+    } else if (key == 'h' || key == 'H'){
+          effectsMode.setAll(false); 
+          effectsMode.lines = true; 
     }
      
    //set target movie
-    if (key >= '1' && key <= '8'){
+    if (key >= '1' && key <= '6'){
       targetMov = singles[int(key)-49];  
     } else {
         if(key == 'z' || key == 'Z'){

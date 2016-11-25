@@ -64,3 +64,23 @@ void crawlBlock(int blockSize, Movie mov){
       animation.tintGo = false; 
     }
 }
+
+void lines (int blockS, Movie mov){
+  mov.read(); 
+  noStroke();
+  PImage imageFrame;
+  
+  for (int i = 0; i < totalBalls; i++)  b[i] = new PVector();
+  
+  moveSpeed += 200; 
+  for(int i = 0; i<totalBalls; i++){
+    b[i].x = noise(i)*mov.width*2-mov.width/2;
+    b[i].y = noise(moveSpeed)*mov.height*2-mov.height/2;
+  }
+  
+  for(int i =0; i<totalBalls; i++){
+    color pix = mov.get(int(b[i].x), int(b[i].y));
+    fill(pix, 128); 
+    rect(b[i].x, b[i].y, blockS, blockS);
+  }
+}
