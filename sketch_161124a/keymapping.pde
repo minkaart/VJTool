@@ -79,6 +79,11 @@ void getkeys(){
           blockSize = 2; 
           effectsMode.setAll(false); 
           effectsMode.lines = true; 
+    } else if (key == 'j' || key == 'J'){
+          blockSize = 2;
+          bGround = false; 
+          effectsMode.setAll(false); 
+          effectsMode.crawlCircle = true; 
     }
      
    //set target movie

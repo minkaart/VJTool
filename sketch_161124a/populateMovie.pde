@@ -2,6 +2,7 @@ void populateMovie(){
   //Populate movie Arrays
 //Populate single movs
    singles = new Movie[]{
+     new Movie(this, "danceLong/GoGo.mov"),
     //new Movie(this, "singles/angryCrowd.mov"),
     //new Movie(this, "singles/batmanrunning.mov"),
     new Movie(this, "singles/max.mov"),  
