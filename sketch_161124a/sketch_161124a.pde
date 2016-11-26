@@ -89,7 +89,7 @@ plays = 0;
  //Populate movie arrays
  populateMovie(); 
  
-movieList = new Movie[][]{heads, other, heads, other};
+movieList = new Movie[][]{heads, other, other, other};
 active = new Movie[4];
 refreshActive();
 targetMov = active[0];
